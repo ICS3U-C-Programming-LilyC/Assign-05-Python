@@ -30,50 +30,40 @@ def calculate_perimeter(side_a, side_b):
 
 # Declaring main() function to get user input/output and catching invalid inputs.
 def main():
-    # Getting user using a while True loop for the sides (A & B).
     while True:
-        # Using a try catch to catch erroneous data.
-        try:
-            # Converting user input from strings to floats.
-            side_a = float(input("Enter the length of side A (cm): "))
-            side_b = float(input("Enter the length of side B (cm): "))
+        # Getting user input for the 2 sides (A & B) only once.
+        side_a = float(input("Enter the length of side A (cm): "))
+        side_b = float(input("Enter the length of side B (cm): "))
 
-            # If statement to check if the inputs are greater than or equal to 0.
-            if side_a >= 0 and side_b >= 0:
-                # If they're less than 0 or equal to 0, then break out of the loop.
-                break
-            # Else their input is less than or equal to 0.
-            else:
-                print("Please enter a number greater than 0.")
-
-        # Catching any errors.
-        except:
-            print("Invalid input. Please enter a valid number.")
-
-    # Calling functions to display hypotenuse and perimeter.
-    hypotenuse = calculate_hypotenuse(side_a, side_b)
-    perimeter = calculate_perimeter(side_a, side_b)
-
-    # Displaying the hypotenuse and perimeter to the user.
-    print("The hypotenuse is {:.2F}".format(hypotenuse))
-    print("The perimeter is {:.2F}".format(perimeter))
-
-
-# Declaring a function for the loop.
-def run_program():
-    # Using a while loop to ask the user if they want to run the program again.
-    while True:
         # Loop main() function.
-        main()
-        # Asking user if they want to run my program again.
-        user_input = input("Do you want to run the program again? (1 -Yes or 2 - No): ")
-        # If the user input does not equal 1 then break out of the loop.
-        if user_input != "1":
-            break
+        try:
+            # Calculating hypotenuse and perimeter.
+            hypotenuse = calculate_hypotenuse(side_a, side_b)
+            perimeter = calculate_perimeter(side_a, side_b)
 
-# Calling the run_program() function to execute the loop.
-run_program()
+            # Displaying the hypotenuse and perimeter to the user.
+            print("The hypotenuse is {:.2F}".format(hypotenuse))
+            print("The perimeter is {:.2F}".format(perimeter))
+            
+            try:
+                # Asking user if they want to run the program again.
+                user_input = input("Do you want to run the program again? (1 - Yes or 2 - No): ")
 
+                # Converting user input as a string to an integer.
+                user_input_as_integer = int(user_input)
 
+                # If the user input is not equal to 1, break out of the loop.
+                if (user_input_as_integer != 1):
+                    break
+
+            # Catching invalid inputs.
+            except:
+                print("Invalid input. Please enter 1 to run my program again or 2 to stop my program.")
+                break
+
+        except:
+            print("Invalid input for sides. Please try again.")
+
+# Calling the main() function to execute the loop.
 if __name__ == "__main__":
     main()
