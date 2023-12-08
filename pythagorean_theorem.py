@@ -71,6 +71,9 @@ def run_program():
         if user_input != "1":
             break
 
-
 # Calling the run_program() function to execute the loop.
 run_program()
+
+
+if __name__ == "__main__":
+    main()
