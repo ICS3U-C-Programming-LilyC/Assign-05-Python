@@ -20,7 +20,7 @@ def calculate_hypotenuse(side_a, side_b):
 
 # Declaring function to calculate the perimeter.
 def calculate_perimeter(side_a, side_b):
-    # Calling the calculated hypotenuse from it's function to use it for calculating the perimeter.
+    # Calling the calculated hypotenuse from its function to use it for calculating the perimeter.
     hypotenuse = calculate_hypotenuse(side_a, side_b)
     # Calculating the perimeter.
     perimeter = side_a + side_b + hypotenuse
@@ -28,11 +28,12 @@ def calculate_perimeter(side_a, side_b):
     return perimeter
 
 
-# Declaring main() function to get user input/output and catching invalid inputs.
+# Declaring main() function to get user input/output, catch invalid inputs and loop.
 def main():
-
     # Explaining my program to the user.
-    print("Welcome to my right triangle program in python. My program will calculate the hypotenuse of any right triangle using Pythagorean Theorem and can additionally calculate its perimeter. It uses a loop to allow for my program to be run again.")
+    print(
+        "Welcome to my right triangle program in python. My program will calculate the hypotenuse of any right triangle using Pythagorean Theorem and can additionally calculate its perimeter. It uses a loop to allow for my program to be run again."
+    )
     while True:
         # Getting user input for the 2 sides (A & B) only once.
         side_a = input("Enter the length of side A (cm): ")
@@ -55,7 +56,7 @@ def main():
 
             # Using a second try catch to catch any errors for inputs regarding if they would like to run my program again.
             try:
-                # Asking user if they want to run the program again.
+                # Asking the user if they want to run the program again.
                 user_input = input(
                     "Do you want to run the program again? (1 - Yes or 2 - No): "
                 )
