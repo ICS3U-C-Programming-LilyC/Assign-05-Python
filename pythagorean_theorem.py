@@ -32,38 +32,48 @@ def calculate_perimeter(side_a, side_b):
 def main():
     while True:
         # Getting user input for the 2 sides (A & B) only once.
-        side_a = float(input("Enter the length of side A (cm): "))
-        side_b = float(input("Enter the length of side B (cm): "))
+        side_a = input("Enter the length of side A (cm): ")
+        side_b = input("Enter the length of side B (cm): ")
 
         # Loop main() function.
+        # Using a try catch to catch any errors.
         try:
+            # Converting user input to a float.
+            side_a_as_float = float(side_a)
+            side_b_as_float = float(side_b)
+
             # Calculating hypotenuse and perimeter.
-            hypotenuse = calculate_hypotenuse(side_a, side_b)
-            perimeter = calculate_perimeter(side_a, side_b)
+            hypotenuse = calculate_hypotenuse(side_a_as_float, side_b_as_float)
+            perimeter = calculate_perimeter(side_a_as_float, side_b_as_float)
 
             # Displaying the hypotenuse and perimeter to the user.
             print("The hypotenuse is {:.2F}".format(hypotenuse))
             print("The perimeter is {:.2F}".format(perimeter))
-            
+
+            # Using a second try catch to catch any errors for inputs regarding if they would like to run my program again.
             try:
                 # Asking user if they want to run the program again.
-                user_input = input("Do you want to run the program again? (1 - Yes or 2 - No): ")
+                user_input = input(
+                    "Do you want to run the program again? (1 - Yes or 2 - No): "
+                )
 
                 # Converting user input as a string to an integer.
                 user_input_as_integer = int(user_input)
 
                 # If the user input is not equal to 1, break out of the loop.
-                if (user_input_as_integer != 1):
+                if user_input_as_integer != 1:
                     break
 
-            # Catching invalid inputs.
+            # Catching invalid inputs regarding running my program again.
             except:
-                print("Invalid input. Please enter 1 to run my program again or 2 to stop my program.")
+                print(
+                    "Invalid input. Please enter 1 to run my program again or 2 to stop my program."
+                )
                 break
-
+        # Catching invalid inputs for side lengths.
         except:
             print("Invalid input for sides. Please try again.")
 
-# Calling the main() function to execute the loop.
+
 if __name__ == "__main__":
     main()
