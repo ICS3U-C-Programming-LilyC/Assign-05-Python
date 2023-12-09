@@ -46,13 +46,18 @@ def main():
             side_a_as_float = float(side_a)
             side_b_as_float = float(side_b)
 
+            # Error checking for negative inputs for side lengths.
+            if side_a_as_float <= 0 or side_b_as_float <= 0:
+                print("Side lengths must be greater than 0.")
+                break
+                continue
             # Calculating hypotenuse and perimeter.
             hypotenuse = calculate_hypotenuse(side_a_as_float, side_b_as_float)
             perimeter = calculate_perimeter(side_a_as_float, side_b_as_float)
 
             # Displaying the hypotenuse and perimeter to the user.
-            print("The hypotenuse is {:.2F}".format(hypotenuse))
-            print("The perimeter is {:.2F}".format(perimeter))
+            print("The hypotenuse is {:.2F} cm.".format(hypotenuse))
+            print("The perimeter is {:.2F} cm.".format(perimeter))
 
             # Using a second try catch to catch any errors for inputs regarding if they would like to run my program again.
             try:
@@ -60,12 +65,12 @@ def main():
                 user_input = input(
                     "Do you want to run the program again? (1 - Yes or 2 - No): "
                 )
-
                 # Converting user input as a string to an integer.
                 user_input_as_integer = int(user_input)
 
                 # If the user input is not equal to 1, break out of the loop.
                 if user_input_as_integer != 1:
+                    # Breaking out of loop if input is invalid.
                     break
 
             # Catching invalid inputs regarding running my program again.
@@ -73,10 +78,13 @@ def main():
                 print(
                     "Invalid input. Please enter 1 to run my program again or 2 to stop my program."
                 )
+                # Breaking out of loop if input is invalid.
                 break
-        # Catching invalid inputs for side lengths.
+
+            # Catching invalid inputs for side lengths.
         except:
             print("Invalid input for sides. Please try again.")
+            break
 
 
 if __name__ == "__main__":
