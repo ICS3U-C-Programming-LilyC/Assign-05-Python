@@ -30,6 +30,9 @@ def calculate_perimeter(side_a, side_b):
 
 # Declaring main() function to get user input/output and catching invalid inputs.
 def main():
+
+    # Explaining my program to the user.
+    print("Welcome to my right triangle program in python. My program will calculate the hypotenuse of any right triangle using Pythagorean Theorem and can additionally calculate its perimeter. It uses a loop to allow for my program to be run again.")
     while True:
         # Getting user input for the 2 sides (A & B) only once.
         side_a = input("Enter the length of side A (cm): ")
