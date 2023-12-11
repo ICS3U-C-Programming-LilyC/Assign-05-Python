@@ -47,7 +47,7 @@ def main():
             side_b_as_float = float(side_b)
 
             # Error checking for negative or 0 inputs for side lengths.
-            if (side_a_as_float <= 0 or side_b_as_float <= 0):
+            if side_a_as_float <= 0 or side_b_as_float <= 0:
                 print("Side lengths must be greater than 0.")
                 break
                 continue
@@ -60,7 +60,9 @@ def main():
             print("The perimeter is {:.2F} cm.".format(perimeter))
 
             # Asking the user if they want to run the program again.
-            user_input = input("Do you want to run the program again? (1 - Yes or 2 - No): ")
+            user_input = input(
+                "Do you want to run the program again? (1 - Yes or 2 - No): "
+            )
 
             # Using a second try catch to catch any errors for inputs regarding if they would like to run my program again.
             try:
@@ -68,7 +70,7 @@ def main():
                 user_input_as_integer = int(user_input)
 
                 # If the user input is not equal to 1, break out of the loop.
-                if (user_input_as_integer != 1):
+                if user_input_as_integer != 1:
                     # Breaking out of loop if input is invalid.
                     break
 
