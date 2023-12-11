@@ -34,20 +34,20 @@ def main():
     print(
         "Welcome to my right triangle program in python. My program will calculate the hypotenuse of any right triangle using Pythagorean Theorem and can additionally calculate its perimeter. It uses a loop to allow for my program to be run again."
     )
+    # Loop main() function using a While true loop.
     while True:
         # Getting user input for the 2 sides (A & B) only once.
         side_a = input("Enter the length of side A (cm): ")
         side_b = input("Enter the length of side B (cm): ")
 
-        # Loop main() function.
         # Using a try catch to catch any errors.
         try:
             # Converting user input to a float.
             side_a_as_float = float(side_a)
             side_b_as_float = float(side_b)
 
-            # Error checking for negative inputs for side lengths.
-            if side_a_as_float <= 0 or side_b_as_float <= 0:
+            # Error checking for negative or 0 inputs for side lengths.
+            if (side_a_as_float <= 0 or side_b_as_float <= 0):
                 print("Side lengths must be greater than 0.")
                 break
                 continue
@@ -59,17 +59,16 @@ def main():
             print("The hypotenuse is {:.2F} cm.".format(hypotenuse))
             print("The perimeter is {:.2F} cm.".format(perimeter))
 
+            # Asking the user if they want to run the program again.
+            user_input = input("Do you want to run the program again? (1 - Yes or 2 - No): ")
+
             # Using a second try catch to catch any errors for inputs regarding if they would like to run my program again.
             try:
-                # Asking the user if they want to run the program again.
-                user_input = input(
-                    "Do you want to run the program again? (1 - Yes or 2 - No): "
-                )
                 # Converting user input as a string to an integer.
                 user_input_as_integer = int(user_input)
 
                 # If the user input is not equal to 1, break out of the loop.
-                if user_input_as_integer != 1:
+                if (user_input_as_integer != 1):
                     # Breaking out of loop if input is invalid.
                     break
 
